@@ -5,7 +5,7 @@ from clarifai import rest
 from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as CImage
 from PIL import Image
-import io
+import io, os
 
 app = Flask(__name__)
 c_app = ClarifaiApp(api_key='be4628bc8c5947eeb93c36ad2f8a27cc')
