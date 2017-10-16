@@ -41,7 +41,7 @@ def process_image():
     # print(prediction)
     # print(price)
 
-    return json.dumps({"price": price})
+    return json.dumps({"price": price, "item": prediction})
 
 @app.route('/account/bill=<bill>&item=<item>', methods=['GET'])
 def bill(bill, item):
@@ -64,4 +64,5 @@ def get_nutrition():
     return json.dumps(nutrition.get_nutrition())
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
     app.run(debug = True)
